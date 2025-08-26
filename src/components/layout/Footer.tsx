@@ -108,7 +108,7 @@ const Footer = () => {
 
             <div className="text-center md:text-right">
               <p className="text-caption text-neutral-400">
-                Designed by Dario Volkmann
+                Designed by Leela
               </p>
               <p className="text-caption text-neutral-400">
                 © 2025 Terranova. All Rights Reserved.

@@ -1,37 +1,11 @@
 import { Bed, Bath } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { properties } from '@/data/properties';
 
 const FeaturedListingsSection = () => {
-  const properties = [
-    {
-      id: 'naysha',
-      image: '/terranova/images/naysha/1.png',
-      status: 'For Sale',
-      address: 'Naysha - Premium Residential Complex, Hyderabad',
-      bedrooms: 3,
-      bathrooms: 3,
-      // description: 'Modern luxury apartments with contemporary design and premium amenities in the heart of Hyderabad.'
-    },
-    {
-      id: 'golden-palm',
-      image: '/terranova/images/goldenleaf/1.png',
-      status: 'For Sale',
-      address: 'The Golden Palm - Luxury Villas, Hyderabad',
-      bedrooms: 4,
-      bathrooms: 4,
-      // description: 'Exclusive villa community offering spacious homes with world-class facilities and serene surroundings.'
-    },
-    {
-      id: 'silver-leaf',
-      image: '/terranova/images/silver/1.png',
-      status: 'For Sale',
-      address: 'The Silver Leaf - Elite Residences, Hyderabad',
-      bedrooms: 2,
-      bathrooms: 2,
-      // description: 'Sophisticated residential towers featuring elegant design and premium lifestyle amenities.'
-    }
-  ];
+  // Display only the first 3 properties on the home page
+  const featuredProperties = properties.slice(0, 3);
 
   return (
     <section id="properties" className="py-24 section-elevated">
@@ -48,7 +22,7 @@ const FeaturedListingsSection = () => {
 
         {/* Properties Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {properties.map((property, index) => (
+          {featuredProperties.map((property, index) => (
             <motion.div
               key={property.id}
               className="group"
@@ -62,15 +36,15 @@ const FeaturedListingsSection = () => {
                 {/* Property Image */}
                 <div className="relative overflow-hidden aspect-[3/2]">
                   <img
-                    src={property.image}
-                    alt={property.address}
+                    src={property.images[0]}
+                    alt={property.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Status and Dot on Right Side */}
                   <div className="absolute top-4 right-4 flex items-center gap-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                     <span className="inline-flex items-center px-3 py-1 text-xs font-medium bg-white text-text-primary rounded-full">
-                      {property.status}
+                      For Sale
                     </span>
                   </div>
                 </div>
@@ -79,7 +53,7 @@ const FeaturedListingsSection = () => {
                 <div className="p-6">
                   <div className="mb-4">
                     <h3 className="text-xl font-semibold text-text-primary mb-2 group-hover:text-primary-600 transition-colors">
-                      {property.address}
+                      {property.title}
                     </h3>
                     {/* <p className="text-text-secondary text-sm leading-relaxed">
                       {property.description}

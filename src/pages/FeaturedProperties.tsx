@@ -76,7 +76,7 @@ const FeaturedProperties = () => {
                       <div className="p-6 flex flex-col gap-3 grow">
                         {/* Fix title height to 2 lines max */}
                         <h3 className="text-lg font-medium text-text-primary group-hover:text-primary transition-colors duration-200 line-clamp-2 leading-snug min-h-[3.25rem]">
-                          {property.address}
+                             {property.title}
                         </h3>
 
                         {/* Push meta row to the bottom for perfect alignment */}
