@@ -22,10 +22,10 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-4 lg:space-y-6">
               <p className="text-body">
-                Terranova Foster has always been driven by a deep interest in architecture and design, which led her to pursue a career in real estate.
+                Terranova creates luxury farms and houses that are complete in every sense, from the land they stand on to the final detail that shapes the experience of living in them. Every project is managed in-house, bringing together architecture, interiors, landscaping, design, and branding under a single vision.
               </p>
               <p className="text-body">
-                After earning a degree in Real Estate & Property Management from the University of Hyderabad, Berkeley, she immediately immersed herself in the industry, gaining valuable experience with top agencies in the region.
+                The vision extends beyond individual farms and houses; Terranova is also shaping boutique resorts, retreat centers, and large-scale estates with the same philosophy of thoughtful design and flawless delivery. Whether you seek a luxury farmhouse in Hyderabad or a private estate for family weekends, we aim to create something deeply personal and enduring.
               </p>
             </div>
             <div className="mt-6 lg:mt-8">

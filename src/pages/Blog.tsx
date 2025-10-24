@@ -5,25 +5,25 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "First-Time Homebuyer? Here's What You Need to Know",
+      title: "The Allure of Luxury Farmhouses in Hyderabad",
       date: "Feb 26, 2025",
-      excerpt: "Essential tips and guidance for first-time homebuyers navigating the real estate market.",
+      excerpt: "Explore the rising trend of luxury farmhouses in Hyderabad. Discover why these sprawling properties are becoming the ultimate symbol of luxury, privacy, and a connection to nature for the city's elite.",
       image: "/api/placeholder/400/250",
       category: "Buying Tips"
     },
     {
       id: 2,
-      title: "5 Key Trends Shaping the Real Estate Market in 2025",
+      title: "Navigating the Luxury Real Estate Market in Hyderabad: A Smart Buyer's Guide",
       date: "Dec 3, 2024",
-      excerpt: "Discover the latest trends and market insights that are defining real estate in 2025.",
+      excerpt: "Thinking of investing in a luxury home in Hyderabad? Our guide covers everything from emerging hotspots and RERA to choosing the right builder. Make an informed decision with Terranova.",
       image: "/api/placeholder/400/250",
       category: "Market Trends"
     },
     {
       id: 3,
-      title: "5 Key Tips to Sell Your Property Faster and at the Best Price",
+      title: "The Terranova Difference: Crafting Legacy Farmhouses on the Outskirts of Hyderabad",
       date: "Jan 28, 2025",
-      excerpt: "Proven strategies to maximize your property's value and reduce time on market.",
+      excerpt: "Terranova builds more than farmhouses; we craft personal legacies. Discover our unique approach to designing and building bespoke luxury farmhouses in Hyderabad's most serene locations.",
       image: "/api/placeholder/400/250",
       category: "Selling Tips"
     },

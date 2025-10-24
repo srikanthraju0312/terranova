@@ -32,7 +32,7 @@ const Contact = () => {
                 Let's Connect
               </h1>
               <p className="text-body-lg text-white/90 max-w-2xl mx-auto">
-                Ready to start your real estate journey? Get in touch today and let's make it happen.
+                Want us to design your dream farm? Wait no more! Share your details below and let Terranova bring your vision to reality.
               </p>
             </motion.div>
           </div>
@@ -59,7 +59,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium text-text-primary mb-1">Phone</h3>
-                      <p className="text-text-secondary">+1 (555) 123-4567</p>
+                      <p className="text-text-secondary">+9121223335 </p>
                     </div>
                   </div>
 
@@ -69,7 +69,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium text-text-primary mb-1">Email</h3>
-                      <p className="text-text-secondary">Terranova@ambience.com</p>
+                      <p className="text-text-secondary">Contact@terranovadeveloper.in </p>
                     </div>
                   </div>
 
@@ -80,8 +80,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium text-text-primary mb-1">Office</h3>
                       <p className="text-text-secondary">
-                        123 Luxury Lane<br />
-                        Beverly Hills, CA 90210
+                        Terranova- 3rd floors, Arafath Complex, beside mugadha, road number 10, Barjara hills <br/> Hyderabad- 500034
                       </p>
                     </div>
                   </div>

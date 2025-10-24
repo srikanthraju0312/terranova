@@ -48,19 +48,19 @@ const Counter = ({ end, suffix, duration = 2000 }: CounterProps) => {
 const StatsSection = () => {
   const stats = [
     {
-      value: 250,
+      value: 10,
       suffix: '+',
-      label: 'Transactions Closed'
+      label: 'Properties Delivered'
     },
     {
-      value: 15,
-      suffix: '+',
-      label: 'Years of Experience'
+      value: 11,
+      // suffix: '+',
+      label: 'Average Project Completion(in months)'
     },
     {
-      value: 500,
-      suffix: 'M+',
-      label: 'in Properties Sold'
+      value: 97,
+      suffix: '%',
+      label: 'Client Retention Rate'
     }
   ];
 
@@ -89,8 +89,11 @@ const StatsSection = () => {
             Why Choose Us?
           </p>
           <h2 className="heading-lg text-white font-serif">
-            More Than a Real Estate Agent
+            We create turnkey luxury spaces with the highest emphasis on quality.
           </h2>
+          <p className="text-overline text-white/80 mb-4 tracking-widest">
+            At Terranova, we craft ready-to-live luxury spaces, farms, estates, and more, where all every small and large element is thoughtfully planned. From the foundation to the final décor, our in-house team ensures every detail reflects your taste and our promise of quality. Step into a finished dream built for a lifetime. 
+          </p>
         </motion.div>
 
         {/* Stats Grid */}

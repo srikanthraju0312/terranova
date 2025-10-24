@@ -7,21 +7,33 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: 'How do I schedule a property tour?',
-      answer: 'You can schedule a tour by filling out the contact form on our website or calling us directly. One of our agents will get in touch to confirm the date and time that works best for you.'
+      question: 'What makes a Terranova different from others?',
+      answer: 'At Terranova, we don’t just build structures; we craft spaces where every corner reflects care and imagination. Each luxury farmhouse in Hyderabad is shaped through an architect-led design process, ensuring every structure feels alive and personal. From handpicked materials to the smallest farmhouse design details, our team ensures that your home is as unique as your lifestyle and is designed exactly as you envisioned it.'
     },
     {
-      question: 'How long does the home-buying process take?',
-      answer: 'The timeline varies, but on average, it takes between 30 to 60 days from the time you make an offer to the closing date. Factors such as loan approval, home inspections, and negotiations can affect the timeline.'
+      question: 'How does Terranova handle the farmhouse design and furnishing process?',
+      answer: 'Our approach is full-circle. Architects, designers, and interior specialists collaborate to ensure that every element aligns perfectly and harmoniously. Every detail is thoughtfully planned, focusing on creating comfort without compromising style. Lighting, textures, and spatial flow come together organically, resulting in a bespoke agricultural estate that feels effortless yet deeply refined.'
     },
     {
-      question: 'Do you handle rentals as well?',
-      answer: 'Yes, we assist with both property rentals and purchases. Whether you\'re looking for a short-term lease, a long-term rental, or a rent-to-own option, our agents can help you find the perfect home.'
+      question: 'Can Terranova help with creating a personalized farmhouse experience?',
+      answer: 'Absolutely. All of Terranova’s farmhouses in India and abroad are tailored to the client’s tastes and lifestyle. Want a cozy reading nook, an outdoor lounge, or a terrace garden with specific views? We make it happen. Our goal is to turn visions and dreams into reality, with utmost attention to quality and experience.'
     },
     {
-      question: 'How do I know if a property is a good investment?',
-      answer: 'A good investment property typically has strong potential for appreciation, is located in a desirable area, and generates a steady rental income. It\'s important to consider factors like market trends, property condition, and long-term growth potential before making a decision.'
-    }
+      question: 'Does Terranova provide 3D renders or use advanced technology in farmhouse design plans?',
+      answer: 'Yes. Even before the first brick is laid, we create immersive 3D renders that allow you to walk through your luxury farmhouse in Hyderabad virtually. We are also exploring AI in real estate to fine-tune layouts, lighting, and interiors. This ensures what you imagine is exactly what you get, down to the smallest detail.'
+    },
+    {
+      question: 'How long does it usually take to complete a project?',
+      answer: 'The timeline depends on the size, scope, and level of personalization involved. What sets us apart is how we manage the journey. You’ll always know what stage your home is in, and we make sure every step is handled with precision so the final delivery feels worth the wait.'
+    },
+    {
+      question: 'What kinds of projects does Terranova specialize in?',
+      answer: 'Terranova focuses on more than just farmhouses; our expertise extends to luxury villas, private bungalows, retreat centers, and bespoke agricultural estates. Each project is approached as a signature creation, blending unique architecture, interiors, and farmhouse design.'
+    },
+    {
+      question: 'What services does Terranova offer?',
+      answer: 'Terranova offers end-to-end services across multiple lifestyle and real estate formats, from designing farmhouses, villas, bungalows, and retreat centers to executing complete furnishing and landscaping. Each project begins with an architect-led design process, where we understand your site, purpose, and aesthetic before crafting something that feels truly yours: no replicas, no compromises!'
+    },
   ];
 
   return (
@@ -136,10 +148,37 @@ const FAQSection = () => {
                     </div>
                   </motion.div>
                 </motion.div>
+
               ))}
+              
             </div>
+            
           </div>
+          
         </div>
+        <motion.div
+                className="mt-16 border border-neutral-300 rounded-lg p-12 bg-white/60 backdrop-blur-sm shadow-sm text-center"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.8 }}
+              >
+                <p className="text-lg text-text-primary leading-relaxed mb-4">
+                  Got something specific in mind? Talk to our team for a one-on-one consultation to discover how
+                  <span className="font-semibold text-primary-600"> Terranova </span>
+                  can turn your land into a living masterpiece.
+                </p>
+                <p className="text-lg text-text-primary leading-relaxed">
+                  Write to{' '}
+                  <a
+                    href="mailto:contact@terranovadeveloper.in"
+                    className="text-primary-600 hover:underline"
+                  >
+                    contact@terranovadeveloper.in
+                  </a>
+                  , and our team will get back to you as soon as we can.
+                </p>
+              </motion.div>
       </div>
     </section>
   );

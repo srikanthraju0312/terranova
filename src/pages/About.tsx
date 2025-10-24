@@ -31,7 +31,7 @@ const About = () => {
                 About Terranova
               </h1>
               <p className="text-body-lg text-white/90 max-w-2xl mx-auto">
-                More than a Real Estate Agent
+                Luxury redefined. Quality redefined.
               </p>
             </motion.div>
           </div>
@@ -59,30 +59,26 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <h2 className="heading-lg text-text-primary mb-6">
-                  A Passion for Excellence
+                  Luxury that feels personal
                 </h2>
                 
                 <div className="space-y-6 text-body text-text-secondary">
                   <p>
-                    Terranova Foster has always been driven by a deep interest in architecture and design, 
-                    which led her to pursue a career in real estate.
+                    Terranova creates luxury farms and houses that are complete in every sense, from the land they stand on to the final detail that shapes the experience of living in them. Every project is managed in-house, bringing together architecture, interiors, landscaping, design, and branding under a single vision.
                   </p>
                   
                   <p>
-                    After earning a degree in Real Estate & Property Management from the University of 
-                    Hyderabad, Berkeley, she immediately immersed herself in the industry, gaining 
-                    valuable experience with top agencies in the region.
+                    The vision extends beyond individual farms and houses; Terranova is also shaping boutique resorts, retreat centers, and large-scale estates with the same philosophy of thoughtful design and flawless delivery. Whether you seek a <b>luxury farmhouse in Hyderabad</b> or a private estate for family weekends, we aim to create something deeply personal and enduring.
                   </p>
                   
                   <p>
-                    With over 15 years of experience and more than 250 successful transactions, 
-                    Terranova has established herself as one of Hyderabad's premier real estate professionals.
+                    What makes Terranova stand apart in <b>estate development</b> is our commitment to quality at every stage. From the choice of materials to the precision of construction and the refinement of interiors, each stage is carried out with the greatest attention to detail. Every element, no matter how small, is considered an essential part of the whole, regardless of a <b>premium farmhouse</b> or a large <b>estate development</b> project.
                   </p>
                   
-                  <p>
+                  {/* <p>
                     Her commitment to excellence, attention to detail, and deep understanding of the 
                     luxury market make her the ideal partner for your real estate journey.
-                  </p>
+                  </p> */}
                 </div>
 
                 <div className="mt-8">

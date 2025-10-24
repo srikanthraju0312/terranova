@@ -39,7 +39,7 @@ const TestimonialSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p className="text-2xl lg:text-3xl font-light leading-relaxed text-white mb-8 italic font-serif">
-            "She took the time to understand exactly what we wanted and found us a home that exceeded our expectations. Her market knowledge and negotiation skills helped us secure the property at a great price, even in a competitive market."
+            `Terranova didn't just build a house, they brought my dream to life. From the first conversation to the finishing touches, their attention to detail and care made all difference. Walking in feels like walking into my imagination! Couldn't be happier with the quality and experience delivered.`
           </p>
         </motion.blockquote>
 
@@ -51,7 +51,7 @@ const TestimonialSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <cite className="not-italic">
-            <p className="font-semibold text-white text-lg">Emily Carter</p>
+            <p className="font-semibold text-white text-lg">- X</p>
             <p className="text-white/80">Buyer</p>
           </cite>
         </motion.div>

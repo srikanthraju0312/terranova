@@ -8,19 +8,19 @@ const BlogSection = () => {
       id: '1',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&crop=center',
       date: 'Feb 26, 2025',
-      title: 'First-Time Homebuyer? Here\'s What You Need to Know'
+      title: 'The Allure of Luxury Farmhouses in Hyderabad'
     },
     {
       id: '2',
       image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop&crop=center',
       date: 'Dec 3, 2024',
-      title: '5 Key Trends Shaping the Real Estate Market in 2025'
+      title: "Navigating the Luxury Real Estate Market in Hyderabad: A Smart Buyer's Guide"
     },
     {
       id: '3',
       image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop&crop=center',
       date: 'Jan 28, 2025',
-      title: '5 Key Tips to Sell Your Property Faster and at the Best Price'
+      title: 'The Terranova Difference: Crafting Legacy Farmhouses on the Outskirts of Hyderabad'
     }
   ];
 
