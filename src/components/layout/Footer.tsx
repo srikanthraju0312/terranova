@@ -39,9 +39,9 @@ const Footer = () => {
             <div>
               <h4 className="text-body-lg font-semibold content-spacing text-white">Contact Information</h4>
               <div className="space-y-2 text-caption text-neutral-300">
-                <p>(310) 555-7890</p>
-                <p>hello@julianrealestate.com</p>
-                <p>1234 Main Street, Suite 500<br />Los Angeles, CA</p>
+                <p>+9121223335</p>
+                <p>Contact@terranovadeveloper.in</p>
+                <p>Terranova- 3rd floors, Arafath Complex, beside mugadha, road number 10, Barjara hills <br/> Hyderabad- 500034</p>
               </div>
             </div>
 
@@ -108,7 +108,7 @@ const Footer = () => {
 
             <div className="text-center md:text-right">
               <p className="text-caption text-neutral-400">
-                Designed by Leela
+                Designed by Leela & Srikanth
               </p>
               <p className="text-caption text-neutral-400">
                 © 2025 Terranova. All Rights Reserved.

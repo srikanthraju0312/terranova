@@ -65,7 +65,7 @@ const HeroSection = () => {
           className="text-overline text-text-inverse mb-6 tracking-widest"
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          YOUR NEXT MOVE STARTS HERE
+          Luxury farms and houses where quality meets precision.
         </motion.p>
         
         {/* Main Heading */}
@@ -81,7 +81,9 @@ const HeroSection = () => {
           variants={itemVariants}
           className="text-subtitle mb-12"
         >
-          Hyderabad Real Estate
+          We design and delivery luxury farms and houses as complete experiences.
+          Land acquistion, architectural design, custom branding, and full furnishing, all handled
+          by us.
         </motion.p>
         
         {/* CTA Buttons */}
