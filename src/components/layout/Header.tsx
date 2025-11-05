@@ -3,7 +3,8 @@ import { Menu, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScrollDirection } from '@/hooks/useScrollDirection'
-import logoWhite from '@/assets/logo/terranova-logo.svg'
+import logoWhite from '@/assets/logo/terranova-logo-white.svg'
+import logoBlack from '@/assets/logo/terranova-logo.svg'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -56,14 +57,14 @@ const Header = () => {
       variants={headerVariants}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      <nav className="mx-auto max-w-7xl px-6 lg:px-8">
+      <nav className="mx-auto max-w-7xl px-6 lg:px-8 2xl:px-6">
         <div className="flex justify-between items-center" style={{ paddingTop: '18.5px', paddingBottom: '18.5px' }}>
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
-              src={logoWhite}
+              src={shouldBeTransparent ? logoWhite : logoBlack}
               alt="Terranova Logo"
-              className="h-8 w-auto lg:h-12"
+              className="h-8 w-auto lg:h-12 transition-all duration-300 ease-out"
             />
           </Link>
 

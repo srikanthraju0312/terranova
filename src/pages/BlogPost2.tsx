@@ -3,8 +3,33 @@ import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
+import BlogFAQAccordion from '@/components/BlogFAQAccordion';
 
 const BlogPost2 = () => {
+  // FAQ data
+  const faqs = [
+    {
+      question: "What is the average price of a luxury farmhouse on the outskirts of Hyderabad?",
+      answer: "Prices vary significantly based on location, land size, and the level of customization. It's best to contact a specialized real estate agent in Hyderabad for current market rates. As a starting point, consider the cost of land per acre and the construction cost for a high-end, customized home."
+    },
+    {
+      question: "How does RERA protect buyers of farmhouse plots?",
+      answer: "The Telangana Real Estate Regulatory Authority (RERA) mandates that any plotted development over a certain size must be registered. This ensures transparency in land titles, prevents fraudulent selling, and holds the developer accountable for delivering promised infrastructure."
+    },
+    {
+      question: "What are the ongoing costs associated with owning a farmhouse?",
+      answer: "Beyond the initial investment, owners should budget for property tax in Hyderabad (GHMC), annual maintenance for landscaping and security, utilities (which can be higher for larger properties), and potential repairs."
+    },
+    {
+      question: "Can I get a home loan for buying land and constructing a farmhouse?",
+      answer: "Yes, most banks offer loans for the purchase of land and separate construction loans. However, the terms and Loan-to-Value (LTV) ratio are often stricter than for ready-to-move-in apartments. A strong financial profile is typically required."
+    },
+    {
+      question: "Why should I choose a builder like Terranova over a local contractor?",
+      answer: "A specialized builder brings expertise in design, legal due diligence, quality control, and project management. They mitigate the immense risk and stress of managing multiple vendors and ensure the final product is safe, legal, and built to the highest standards, protecting your long-term investment."
+    }
+  ];
+
   // Related blog posts (the other 2 blogs)
   const relatedPosts = [
     {
@@ -67,7 +92,7 @@ const BlogPost2 = () => {
 
         {/* Blog Content */}
         <section className="py-24 section-elevated">
-          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl px-6 lg:px-8">
             <motion.article
               className="prose prose-lg max-w-none"
               initial={{ opacity: 0, y: 30 }}
@@ -229,42 +254,7 @@ const BlogPost2 = () => {
               {/* FAQs */}
               <div className="mb-16">
                 <h2 className="heading-lg text-text-primary mb-8">Frequently Asked Questions</h2>
-                <div className="space-y-6">
-                  <div className="p-6 bg-white rounded-xl border border-neutral-200 shadow-sm">
-                    <h3 className="text-lg font-semibold text-text-primary mb-3">What is the average price of a luxury farmhouse on the outskirts of Hyderabad?</h3>
-                    <p className="text-body text-text-secondary leading-relaxed">
-                      Prices vary significantly based on location, land size, and the level of customization. It's best to contact a specialized real estate agent in Hyderabad for current market rates. As a starting point, consider the cost of land per acre and the construction cost for a high-end, customized home.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-xl border border-neutral-200 shadow-sm">
-                    <h3 className="text-lg font-semibold text-text-primary mb-3">How does RERA protect buyers of farmhouse plots?</h3>
-                    <p className="text-body text-text-secondary leading-relaxed">
-                      The Telangana Real Estate Regulatory Authority (RERA) mandates that any plotted development over a certain size must be registered. This ensures transparency in land titles, prevents fraudulent selling, and holds the developer accountable for delivering promised infrastructure.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-xl border border-neutral-200 shadow-sm">
-                    <h3 className="text-lg font-semibold text-text-primary mb-3">What are the ongoing costs associated with owning a farmhouse?</h3>
-                    <p className="text-body text-text-secondary leading-relaxed">
-                      Beyond the initial investment, owners should budget for property tax in Hyderabad (GHMC), annual maintenance for landscaping and security, utilities (which can be higher for larger properties), and potential repairs.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-xl border border-neutral-200 shadow-sm">
-                    <h3 className="text-lg font-semibold text-text-primary mb-3">Can I get a home loan for buying land and constructing a farmhouse?</h3>
-                    <p className="text-body text-text-secondary leading-relaxed">
-                      Yes, most banks offer loans for the purchase of land and separate construction loans. However, the terms and Loan-to-Value (LTV) ratio are often stricter than for ready-to-move-in apartments. A strong financial profile is typically required.
-                    </p>
-                  </div>
-
-                  <div className="p-6 bg-white rounded-xl border border-neutral-200 shadow-sm">
-                    <h3 className="text-lg font-semibold text-text-primary mb-3">Why should I choose a builder like Terranova over a local contractor?</h3>
-                    <p className="text-body text-text-secondary leading-relaxed">
-                      A specialized builder brings expertise in design, legal due diligence, quality control, and project management. They mitigate the immense risk and stress of managing multiple vendors and ensure the final product is safe, legal, and built to the highest standards, protecting your long-term investment.
-                    </p>
-                  </div>
-                </div>
+                <BlogFAQAccordion faqs={faqs} />
               </div>
             </motion.article>
           </div>

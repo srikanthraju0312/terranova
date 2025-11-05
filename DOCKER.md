@@ -17,7 +17,7 @@ This guide explains how to build and deploy the Terranova real estate website us
    ```
 
 2. **Access the application:**
-   Open your browser and navigate to: `http://localhost:8080/terranova/`
+   Open your browser and navigate to: `http://localhost:8080/`
 
 3. **Stop the container:**
    ```bash
@@ -37,7 +37,7 @@ This guide explains how to build and deploy the Terranova real estate website us
    ```
 
 3. **Access the application:**
-   Open your browser and navigate to: `http://localhost:8080/terranova/`
+   Open your browser and navigate to: `http://localhost:8080/`
 
 4. **Stop and remove the container:**
    ```bash
@@ -149,7 +149,7 @@ docker push your-registry.com/terranova-website:1.0.0
 
 The container includes a health check that:
 - Runs every 30 seconds
-- Checks if the application is accessible at `/terranova/`
+- Checks if the application is accessible at `/`
 - Retries 3 times before marking as unhealthy
 - Has a 40-second startup grace period
 

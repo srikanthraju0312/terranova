@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logoWhite from '@/assets/logo/terranova-logo.svg';
+import logoWhite from '@/assets/logo/terranova-logo-white.svg';
 
 const Footer = () => {
   return (

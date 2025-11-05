@@ -502,6 +502,16 @@
     }
   }
 
+  @media (min-width: 1536px) {
+    /* Extra Large (2xl+) - Reduced padding for less white space */
+    .section-padding {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
   .hero-padding {
     /* Mobile */
     padding-top: 2rem;
@@ -530,6 +540,16 @@
     }
   }
 
+  @media (min-width: 1536px) {
+    /* Extra Large (2xl+) - Reduced padding for less white space */
+    .hero-padding {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
   .content-spacing {
     /* Mobile */
     margin-bottom: 1.5rem;
@@ -546,6 +566,13 @@
     /* Desktop */
     .content-spacing {
       margin-bottom: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    /* Extra Large (2xl+) - Reduced spacing for less white space */
+    .content-spacing {
+      margin-bottom: 2rem;
     }
   }
 
