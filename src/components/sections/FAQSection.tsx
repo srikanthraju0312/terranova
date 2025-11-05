@@ -37,9 +37,9 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-24 section-neutral">
+    <section className="py-16 section-neutral">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Animated Text */}
           <motion.div
             className="relative"
@@ -48,7 +48,7 @@ const FAQSection = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <div className="space-y-8">
+            <div className="space-y-6">
               {/* FAQ's Text */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -56,14 +56,14 @@ const FAQSection = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <h3 className="text-6xl md:text-7xl font-bold text-primary-600 tracking-tight">
+                <h3 className="text-5xl md:text-6xl font-bold text-primary-600 tracking-tight">
                   FAQ's
                 </h3>
               </motion.div>
 
               {/* Frequently Asked Questions Text */}
               <motion.div
-                className="space-y-2"
+                className="space-y-1"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -75,7 +75,7 @@ const FAQSection = () => {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
-                  <p className="text-2xl md:text-3xl font-light text-text-primary">
+                  <p className="text-xl md:text-2xl font-light text-text-primary">
                     Frequently
                   </p>
                 </motion.div>
@@ -85,7 +85,7 @@ const FAQSection = () => {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                  <p className="text-2xl md:text-3xl font-light text-text-primary">
+                  <p className="text-xl md:text-2xl font-light text-text-primary">
                     Asked Questions
                   </p>
                 </motion.div>
@@ -105,7 +105,7 @@ const FAQSection = () => {
           {/* Right Side - FAQ Content */}
           <div>
             {/* FAQ Items */}
-            <div className="space-y-4">
+            <div className="space-y-2">
               {faqs.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -117,7 +117,7 @@ const FAQSection = () => {
                 >
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full py-6 text-left flex items-center justify-between hover:opacity-70 transition-opacity"
+                    className="w-full py-4 text-left flex items-center justify-between hover:opacity-70 transition-opacity"
                   >
                     <h3 className="text-lg font-medium text-text-primary pr-4">
                       {faq.question}
@@ -141,7 +141,7 @@ const FAQSection = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="pb-6">
+                    <div className="pb-4">
                       <p className="text-text-secondary leading-relaxed">
                         {faq.answer}
                       </p>
@@ -157,7 +157,7 @@ const FAQSection = () => {
           
         </div>
 <motion.div
-  className="mt-16 border text-gray-500 border-neutral-300 rounded-2xl p-12 bg-white/80 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all text-center"
+  className="mt-12 border text-gray-500 border-neutral-300 rounded-2xl p-8 bg-white/80 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all text-center"
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, margin: '-100px' }}

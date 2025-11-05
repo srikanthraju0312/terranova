@@ -13,11 +13,11 @@ const PrivacyPolicy = () => {
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0">
                         <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeJrjjFgcHD5EjpWHLQ3tvq1idke73VMFVkQ&s"
-                            alt="Professional real estate office environment"
+                            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&h=1080&fit=crop"
+                            alt="Luxury real estate and modern architecture"
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/60 via-neutral-900/40 to-neutral-900/60"></div>
                     </div>
 
                     {/* Content */}
@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h1 className="heading-display text-white mb-6">
+                            <h1 className="heading-display text-text-inverse mb-6">
                                 Privacy Policy
                             </h1>
                         </motion.div>

@@ -45,8 +45,8 @@ const AboutSection = () => {
           >
             <div className="relative">
               <img
-                src="https://framerusercontent.com/images/qyrHS8yHxWjbGejCnaNbfZZL9w.jpg"
-                alt="Terranova - Real Estate Professional"
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=1200&fit=crop"
+                alt="Indian family viewing luxury property"
                 className="w-full h-[600px] object-cover rounded-2xl shadow-elevated"
               />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-black/5"></div>

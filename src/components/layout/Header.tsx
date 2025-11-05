@@ -63,7 +63,7 @@ const Header = () => {
             <img
               src={logoWhite}
               alt="Terranova Logo"
-              className="h-8 w-auto"
+              className="h-8 w-auto lg:h-12"
             />
           </Link>
 
