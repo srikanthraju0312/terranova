@@ -34,7 +34,7 @@ const FeaturedProperties = () => {
                 Featured Properties
               </h1>
               <p className="text-body-lg text-white/90 max-w-2xl mx-auto">
-                Discover our carefully curated collection of luxury properties in Hyderabad's most desirable locations.
+                Discover our carefully curated collection of luxury properties in India's most desirable locations.
               </p>
             </motion.div>
           </div>
@@ -47,7 +47,7 @@ const FeaturedProperties = () => {
               {properties.map((property, index) => (
                 <motion.div
                   key={property.id}
-                  className="h-full"                                 // ⬅️ make grid cell stretch
+                  className="h-full"                                 
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
