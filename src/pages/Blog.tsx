@@ -1,6 +1,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const blogPosts = [
@@ -10,7 +11,8 @@ const Blog = () => {
       date: "Feb 26, 2025",
       excerpt: "Explore the rising trend of luxury farmhouses in Hyderabad. Discover why these sprawling properties are becoming the ultimate symbol of luxury, privacy, and a connection to nature for the city's elite.",
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
-      category: "Luxury Living"
+      category: "Luxury Living",
+      slug: "luxury-farmhouses-hyderabad"
     },
     {
       id: 2,
@@ -18,7 +20,8 @@ const Blog = () => {
       date: "Dec 3, 2024",
       excerpt: "Thinking of investing in a luxury home in Hyderabad? Our guide covers everything from emerging hotspots and RERA to choosing the right builder. Make an informed decision with Terranova.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
-      category: "Buyer's Guide"
+      category: "Buyer's Guide",
+      slug: "navigating-luxury-real-estate-hyderabad"
     },
     {
       id: 3,
@@ -26,7 +29,8 @@ const Blog = () => {
       date: "Jan 28, 2025",
       excerpt: "Terranova builds more than farmhouses; we craft personal legacies. Discover our unique approach to designing and building bespoke luxury farmhouses in Hyderabad's most serene locations.",
       image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
-      category: "Our Projects"
+      category: "Our Projects",
+      slug: "terranova-difference-legacy-farmhouses"
     }
   ];
 
@@ -40,7 +44,7 @@ const Blog = () => {
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop&crop=center"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
               alt="Real estate market insights and trends"
               className="w-full h-full object-cover"
             />
@@ -74,46 +78,43 @@ const Blog = () => {
               {blogPosts.map((post) => (
                 <motion.article
                   key={post.id}
-                  className="group cursor-pointer"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
-                  onClick={() => {
-                    // Scroll to top of page smoothly when clicking on a blog post
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
                 >
-                  <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 text-sm text-text-muted">
-                      <span className="bg-neutral-100 px-3 py-1 rounded-full">
-                        {post.category}
-                      </span>
-                      <span>{post.date}</span>
+                  <Link to={`/blog/${post.slug}`} className="group block">
+                    <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
 
-                    <h2 className="text-xl font-semibold text-text-primary group-hover:text-primary-600 transition-colors">
-                      {post.title}
-                    </h2>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-4 text-sm text-text-muted">
+                        <span className="bg-neutral-100 px-3 py-1 rounded-full">
+                          {post.category}
+                        </span>
+                        <span>{post.date}</span>
+                      </div>
 
-                    <p className="text-text-secondary leading-relaxed">
-                      {post.excerpt}
-                    </p>
+                      <h2 className="text-xl font-semibold text-text-primary group-hover:text-primary-600 transition-colors">
+                        {post.title}
+                      </h2>
 
-                    <div className="pt-2">
-                      <span className="text-primary-600 font-medium group-hover:underline inline-flex items-center gap-1">
-                        Read More →
-                      </span>
+                      <p className="text-text-secondary leading-relaxed">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="pt-2">
+                        <span className="text-primary-600 font-medium group-hover:underline inline-flex items-center gap-1">
+                          Read More →
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </motion.article>
               ))}
             </div>

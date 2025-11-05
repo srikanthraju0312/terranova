@@ -8,19 +8,22 @@ const BlogSection = () => {
       id: '1',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop',
       date: 'Feb 26, 2025',
-      title: 'The Allure of Luxury Farmhouses in Hyderabad'
+      title: 'The Allure of Luxury Farmhouses in Hyderabad',
+      slug: 'luxury-farmhouses-hyderabad'
     },
     {
       id: '2',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
       date: 'Dec 3, 2024',
-      title: "Navigating the Luxury Real Estate Market in Hyderabad: A Smart Buyer's Guide"
+      title: "Navigating the Luxury Real Estate Market in Hyderabad: A Smart Buyer's Guide",
+      slug: 'navigating-luxury-real-estate-hyderabad'
     },
     {
       id: '3',
       image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop',
       date: 'Jan 28, 2025',
-      title: 'The Terranova Difference: Crafting Legacy Farmhouses on the Outskirts of Hyderabad'
+      title: 'The Terranova Difference: Crafting Legacy Farmhouses on the Outskirts of Hyderabad',
+      slug: 'terranova-difference-legacy-farmhouses'
     }
   ];
 
@@ -48,39 +51,40 @@ const BlogSection = () => {
           {posts.map((post, index) => (
             <motion.article
               key={post.id}
-              className="group cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
             >
-              <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
-                {/* Post Image */}
-                <div className="relative overflow-hidden aspect-[3/2]">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                {/* Post Content */}
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3 text-text-muted">
-                    <Calendar className="h-4 w-4" />
-                    <time className="text-sm">{post.date}</time>
+              <Link to={`/blog/${post.slug}`} className="group block">
+                <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+                  {/* Post Image */}
+                  <div className="relative overflow-hidden aspect-[3/2]">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-text-primary mb-4 group-hover:text-primary-600 transition-colors leading-snug">
-                    {post.title}
-                  </h3>
+                  {/* Post Content */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3 text-text-muted">
+                      <Calendar className="h-4 w-4" />
+                      <time className="text-sm">{post.date}</time>
+                    </div>
 
-                  <div className="flex items-center text-sm font-medium text-primary-600 group-hover:text-primary-700 transition-colors">
-                    <span className="mr-2">Read More</span>
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <h3 className="text-lg font-semibold text-text-primary mb-4 group-hover:text-primary-600 transition-colors leading-snug">
+                      {post.title}
+                    </h3>
+
+                    <div className="flex items-center text-sm font-medium text-primary-600 group-hover:text-primary-700 transition-colors">
+                      <span className="mr-2">Read More</span>
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </motion.article>
           ))}
         </div>
