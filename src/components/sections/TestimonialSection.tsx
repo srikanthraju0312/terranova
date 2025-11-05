@@ -24,8 +24,8 @@ const TestimonialSection = () => {
         >
           <div className="w-32 h-32 lg:w-40 lg:h-40 mx-auto mb-6">
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face"
-              alt="Emily Carter - Client"
+              src="https://images.forbesindia.com/blog/wp-content/uploads/media/images/2025/Jun/img_246272_srinivasn_final-21_bg.jpg?im=Resize,width=500,aspect=fit,type=normal"
+              alt="Srinivas M - Client"
               className="w-full h-full object-cover rounded-full shadow-xl border-4 border-white/90"
             />
           </div>
@@ -51,7 +51,7 @@ const TestimonialSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <cite className="not-italic">
-            <p className="font-semibold text-white text-lg">- X</p>
+            <p className="font-semibold text-white text-lg">- Srinivas M</p>
             <p className="text-white/80">Buyer</p>
           </cite>
         </motion.div>

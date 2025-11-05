@@ -85,14 +85,14 @@ const StatsSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-overline text-white/80 mb-4 tracking-widest">
+          <p className="text-sm text-white/80 mb-3 tracking-widest uppercase">
             Why Choose Us?
           </p>
-          <h2 className="heading-lg text-white font-serif">
+          <h2 className="text-3xl md:text-4xl text-white font-serif mb-4">
             We create turnkey luxury spaces with the highest emphasis on quality.
           </h2>
-          <p className="text-overline text-white/80 mb-4 tracking-widest">
-            At Terranova, we craft ready-to-live luxury spaces, farms, estates, and more, where all every small and large element is thoughtfully planned. From the foundation to the final décor, our in-house team ensures every detail reflects your taste and our promise of quality. Step into a finished dream built for a lifetime. 
+          <p className="text-base md:text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">
+            At Terranova, we craft ready-to-live luxury spaces, farms, estates, and more, where all every small and large element is thoughtfully planned. From the foundation to the final décor, our in-house team ensures every detail reflects your taste and our promise of quality. Step into a finished dream built for a lifetime.
           </p>
         </motion.div>
 

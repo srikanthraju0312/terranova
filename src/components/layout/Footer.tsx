@@ -69,7 +69,7 @@ const Footer = () => {
                 <Link to="/featured-properties" className="block text-caption text-neutral-300 hover:text-white transition-colors">
                   Featured Properties
                 </Link>
-                <Link to="/past-transactions" className="block text-caption text-neutral-300 hover:text-white transition-colors">
+                <Link to="/featured-properties" className="block text-caption text-neutral-300 hover:text-white transition-colors">
                   Past Transactions
                 </Link>
                 <Link to="/blog" className="block text-caption text-neutral-300 hover:text-white transition-colors">

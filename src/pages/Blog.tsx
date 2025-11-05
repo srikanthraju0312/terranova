@@ -1,5 +1,6 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { motion } from 'framer-motion';
 
 const Blog = () => {
   const blogPosts = [
@@ -8,58 +9,34 @@ const Blog = () => {
       title: "The Allure of Luxury Farmhouses in Hyderabad",
       date: "Feb 26, 2025",
       excerpt: "Explore the rising trend of luxury farmhouses in Hyderabad. Discover why these sprawling properties are becoming the ultimate symbol of luxury, privacy, and a connection to nature for the city's elite.",
-      image: "/api/placeholder/400/250",
-      category: "Buying Tips"
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop",
+      category: "Luxury Living"
     },
     {
       id: 2,
       title: "Navigating the Luxury Real Estate Market in Hyderabad: A Smart Buyer's Guide",
       date: "Dec 3, 2024",
       excerpt: "Thinking of investing in a luxury home in Hyderabad? Our guide covers everything from emerging hotspots and RERA to choosing the right builder. Make an informed decision with Terranova.",
-      image: "/api/placeholder/400/250",
-      category: "Market Trends"
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+      category: "Buyer's Guide"
     },
     {
       id: 3,
       title: "The Terranova Difference: Crafting Legacy Farmhouses on the Outskirts of Hyderabad",
       date: "Jan 28, 2025",
       excerpt: "Terranova builds more than farmhouses; we craft personal legacies. Discover our unique approach to designing and building bespoke luxury farmhouses in Hyderabad's most serene locations.",
-      image: "/api/placeholder/400/250",
-      category: "Selling Tips"
-    },
-    {
-      id: 4,
-      title: "Understanding Property Investment in Hyderabad",
-      date: "Jan 15, 2025",
-      excerpt: "A comprehensive guide to real estate investment opportunities in Hyderabad.",
-      image: "/api/placeholder/400/250",
-      category: "Investment"
-    },
-    {
-      id: 5,
-      title: "Luxury Home Features That Add Value",
-      date: "Jan 10, 2025",
-      excerpt: "Discover which luxury features provide the best return on investment.",
-      image: "/api/placeholder/400/250",
-      category: "Luxury Homes"
-    },
-    {
-      id: 6,
-      title: "Navigating the Hyderabad Real Estate Market",
-      date: "Dec 20, 2024",
-      excerpt: "Expert insights into Hyderabad's unique real estate landscape and opportunities.",
-      image: "/api/placeholder/400/250",
-      category: "Market Analysis"
+      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+      category: "Our Projects"
     }
   ];
 
   return (
     <div className="min-h-screen">
       <Header />
-      
-      <main className="pt-20">
+
+      <main>
         {/* Hero Section */}
-        <section className="relative min-h-[100svh] md:min-h-[100dvh]  flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[100svh] md:min-h-[100dvh] flex items-center justify-center overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
@@ -67,19 +44,26 @@ const Blog = () => {
               alt="Real estate market insights and trends"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/60 via-neutral-900/40 to-neutral-900/60"></div>
           </div>
 
           {/* Content */}
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <div>
-              <h1 className="heading-display text-white mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-overline text-text-inverse/80 mb-4 tracking-widest">
                 Latest Insights & Market Trends
-              </h1>
-              <p className="text-body-lg text-white/90 max-w-3xl mx-auto">
-                Real Estate Tips & Expert Advice
               </p>
-            </div>
+              <h1 className="heading-display text-text-inverse mb-6">
+                Real Estate Tips & Expert Advice
+              </h1>
+              <p className="text-subtitle text-text-inverse/90 max-w-2xl mx-auto">
+                Discover expert insights, market trends, and valuable tips for your real estate journey
+              </p>
+            </motion.div>
           </div>
         </section>
 
@@ -88,18 +72,26 @@ const Blog = () => {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post) => (
-                <article 
+                <motion.article
                   key={post.id}
                   className="group cursor-pointer"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6 }}
+                  onClick={() => {
+                    // Scroll to top of page smoothly when clicking on a blog post
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 >
                   <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6">
-                    <img 
+                    <img
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  
+
                   <div className="space-y-3">
                     <div className="flex items-center gap-4 text-sm text-text-muted">
                       <span className="bg-neutral-100 px-3 py-1 rounded-full">
@@ -107,22 +99,22 @@ const Blog = () => {
                       </span>
                       <span>{post.date}</span>
                     </div>
-                    
+
                     <h2 className="text-xl font-semibold text-text-primary group-hover:text-primary-600 transition-colors">
                       {post.title}
                     </h2>
-                    
+
                     <p className="text-text-secondary leading-relaxed">
                       {post.excerpt}
                     </p>
-                    
+
                     <div className="pt-2">
-                      <span className="text-primary-600 font-medium group-hover:underline">
+                      <span className="text-primary-600 font-medium group-hover:underline inline-flex items-center gap-1">
                         Read More →
                       </span>
                     </div>
                   </div>
-                </article>
+                </motion.article>
               ))}
             </div>
           </div>

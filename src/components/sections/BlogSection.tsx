@@ -6,19 +6,19 @@ const BlogSection = () => {
   const posts = [
     {
       id: '1',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop',
       date: 'Feb 26, 2025',
       title: 'The Allure of Luxury Farmhouses in Hyderabad'
     },
     {
       id: '2',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop',
       date: 'Dec 3, 2024',
       title: "Navigating the Luxury Real Estate Market in Hyderabad: A Smart Buyer's Guide"
     },
     {
       id: '3',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop&crop=center',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop',
       date: 'Jan 28, 2025',
       title: 'The Terranova Difference: Crafting Legacy Farmhouses on the Outskirts of Hyderabad'
     }
