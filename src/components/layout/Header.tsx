@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScrollDirection } from '@/hooks/useScrollDirection'
+import logoWhite from '@/assets/logo/terranova-logo.svg'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -59,14 +60,11 @@ const Header = () => {
         <div className="flex justify-between items-center" style={{ paddingTop: '18.5px', paddingBottom: '18.5px' }}>
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm italic">T</span>
-              </div>
-              <span className={`font-serif text-xl font-semibold ${textColorClass}`}>
-                <span className="font-bold italic">T</span>erranova
-              </span>
-            </div>
+            <img
+              src={logoWhite}
+              alt="Terranova Logo"
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop/Tablet Navigation (810px+) */}

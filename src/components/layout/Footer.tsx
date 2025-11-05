@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logoWhite from '@/assets/logo/terranova-logo.svg';
 
 const Footer = () => {
   return (
@@ -99,14 +100,11 @@ const Footer = () => {
         <div className="py-4 lg:py-6 border-t border-neutral-700">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-neutral-900 font-bold text-sm italic">T</span>
-                </div>
-                <span className="font-serif text-xl font-semibold text-white">
-                  <span className="font-bold italic">T</span>erranova
-                </span>
-              </div>
+              <img
+                src={logoWhite}
+                alt="Terranova Logo"
+                className="h-8 w-auto"
+              />
             </div>
 
             <div className="text-center md:text-right">

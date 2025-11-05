@@ -189,7 +189,7 @@ const PropertyDetail = () => {
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* Map Placeholder */}
                 <div className="lg:col-span-2">
-                  <div className="bg-white rounded-lg overflow-hidden shadow-sm h-96">
+                  <div className="bg-surface-elevated rounded-lg overflow-hidden shadow-sm h-96">
                     <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
                       <div className="text-center">
                         <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -211,7 +211,7 @@ const PropertyDetail = () => {
 
                 {/* Location Details */}
                 <div className="lg:col-span-1">
-                  <div className="bg-white rounded-lg p-6 shadow-sm h-96 overflow-hidden">
+                  <div className="bg-surface-elevated rounded-lg p-6 shadow-sm h-96 overflow-hidden">
                     <h3 className="heading-xs text-text-primary mb-4">
                       Nearby Landmarks
                     </h3>

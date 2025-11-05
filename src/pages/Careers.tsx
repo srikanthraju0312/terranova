@@ -17,7 +17,7 @@ const Careers = () => {
               alt="Team working together"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/60 via-neutral-900/40 to-neutral-900/60"></div>
           </div>
 
           {/* Content */}
@@ -27,7 +27,7 @@ const Careers = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="heading-display text-white mb-6">
+              <h1 className="heading-display text-text-inverse mb-6">
                 Careers at Terranova
               </h1>
             </motion.div>

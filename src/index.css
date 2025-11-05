@@ -28,12 +28,34 @@
     --text-secondary: 0 0% 45%;
     --text-muted: 0 0% 65%;
     --text-inverse: 0 0% 95%;
-    
+
     /* Interactive Elements */
     --interactive-primary: 0 0% 13%; /* ink-900 #212121 */
     --interactive-secondary: 0 0% 95%;
     --interactive-hover: 0 0% 20%;
     --interactive-border: 0 0% 85%;
+
+    /* Neutral Colors */
+    --neutral-50: 0 0% 98%;
+    --neutral-100: 0 0% 96%;
+    --neutral-200: 0 0% 90%;
+    --neutral-300: 0 0% 83%;
+    --neutral-400: 0 0% 64%;
+    --neutral-500: 0 0% 45%;
+    --neutral-600: 0 0% 32%;
+    --neutral-700: 0 0% 25%;
+    --neutral-800: 0 0% 15%;
+    --neutral-900: 0 0% 9%;
+
+    /* Semantic Colors */
+    --color-white: 0 0% 100%;
+    --color-black: 0 0% 0%;
+    --color-green-500: 142 71% 45%;
+
+    /* Common Color Aliases */
+    --bg-dark: 0 0% 9%;
+    --text-light: 0 0% 95%;
+    --text-dark: 0 0% 13%;
     
     /* Overlays & Gradients */
     --overlay-dark: 0 0% 7% / 0.75;
@@ -142,7 +164,7 @@
   .heading-hero {
     font-family: "Italiana", "Italiana Placeholder", serif;
     font-weight: 400;
-    color: #FFFFFF;
+    color: hsl(var(--color-white));
     line-height: 1.1;
 
     /* Mobile (640px - 809px) */
@@ -168,7 +190,7 @@
   .heading-section {
     font-family: "Italiana", "Italiana Placeholder", serif;
     font-weight: 400;
-    color: #212121;
+    color: hsl(var(--text-primary));
     line-height: 1.2;
 
     /* Mobile (640px - 809px) */
@@ -193,7 +215,7 @@
   .text-subtitle {
     font-family: "Raleway", "Raleway Placeholder", sans-serif;
     font-weight: 400;
-    color: #FFFFFF;
+    color: hsl(var(--color-white));
 
     /* Mobile (640px - 809px) */
     font-size: 18px;

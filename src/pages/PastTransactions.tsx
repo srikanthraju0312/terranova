@@ -135,14 +135,14 @@ const PastTransactions = () => {
                     
                     {/* Status Badge */}
                     <div className="absolute top-4 right-4">
-                      <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-green-500 text-text-inverse px-3 py-1 rounded-full text-sm font-medium">
                         {transaction.status}
                       </span>
                     </div>
-                    
+
                     {/* Property Type */}
                     <div className="absolute top-4 left-4">
-                      <span className="bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                      <span className="bg-neutral-900/50 text-text-inverse px-3 py-1 rounded-full text-sm">
                         {transaction.type}
                       </span>
                     </div>

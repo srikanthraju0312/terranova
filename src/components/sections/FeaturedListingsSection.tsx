@@ -32,7 +32,7 @@ const FeaturedListingsSection = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
             >
               <Link to={`/properties/${property.id}`} className="block">
-                <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+                <div className="bg-surface-elevated rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer">
                 {/* Property Image */}
                 <div className="relative overflow-hidden aspect-[3/2]">
                   <img

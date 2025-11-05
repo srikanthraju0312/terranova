@@ -20,7 +20,7 @@ const FeaturedProperties = () => {
               alt="Luxury properties and real estate portfolio"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/60 via-neutral-900/40 to-neutral-900/60"></div>
           </div>
 
           {/* Content */}
@@ -30,10 +30,10 @@ const FeaturedProperties = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="heading-display text-white mb-6">
+              <h1 className="heading-display text-text-inverse mb-6">
                 Featured Properties
               </h1>
-              <p className="text-body-lg text-white/90 max-w-2xl mx-auto">
+              <p className="text-body-lg text-text-inverse/90 max-w-2xl mx-auto">
                 Discover our carefully curated collection of luxury properties in India's most desirable locations.
               </p>
             </motion.div>
@@ -66,7 +66,7 @@ const FeaturedProperties = () => {
                         {/* Status Badge */}
                         <div className="absolute top-4 right-4 flex items-center">
                           <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                          <span className="bg-white/90 backdrop-blur-sm text-text-primary text-xs font-medium px-3 py-1 rounded-full">
+                          <span className="bg-surface-elevated/90 backdrop-blur-sm text-text-primary text-xs font-medium px-3 py-1 rounded-full">
                             For Sale
                           </span>
                         </div>

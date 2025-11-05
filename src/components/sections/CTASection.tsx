@@ -11,7 +11,7 @@ const CTASection = () => {
           alt="Luxury real estate background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-neutral-900/50"></div>
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8 text-center">
@@ -22,13 +22,13 @@ const CTASection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-overline text-white/80 mb-4 tracking-widest">
+          <p className="text-overline text-text-inverse/80 mb-4 tracking-widest">
             Find Your Dream Home Today
           </p>
-          <h2 className="heading-xl text-white mb-8 font-serif">
+          <h2 className="heading-xl text-text-inverse mb-8 font-serif">
             Buy, Sell & Rent Easily
           </h2>
-          <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-text-inverse/90 mb-12 max-w-2xl mx-auto leading-relaxed">
             Ready to take the next step in your real estate journey? Whether you're buying, selling, or renting, our experienced team is here to guide you through every step of the process.
           </p>
 
@@ -45,7 +45,7 @@ const CTASection = () => {
             </Link>
             <Link
               to="/featured-properties"
-              className="btn-secondary text-white border-white hover:bg-white hover:text-text-primary"
+              className="btn-secondary text-text-inverse border-text-inverse hover:bg-surface-elevated hover:text-text-primary"
             >
               View Properties
             </Link>
