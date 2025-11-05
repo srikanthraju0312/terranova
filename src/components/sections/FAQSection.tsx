@@ -156,29 +156,31 @@ const FAQSection = () => {
           </div>
           
         </div>
-        <motion.div
-                className="mt-16 border border-neutral-300 rounded-lg p-12 bg-white/60 backdrop-blur-sm shadow-sm text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 0.8 }}
-              >
-                <p className="text-lg text-text-primary leading-relaxed mb-4">
-                  Got something specific in mind? Talk to our team for a one-on-one consultation to discover how
-                  <span className="font-semibold text-primary-600"> Terranova </span>
-                  can turn your land into a living masterpiece.
-                </p>
-                <p className="text-lg text-text-primary leading-relaxed">
-                  Write to{' '}
-                  <a
-                    href="mailto:contact@terranovadeveloper.in"
-                    className="text-primary-600 hover:underline"
-                  >
-                    contact@terranovadeveloper.in
-                  </a>
-                  , and our team will get back to you as soon as we can.
-                </p>
-              </motion.div>
+<motion.div
+  className="mt-16 border text-gray-500 border-neutral-300 rounded-2xl p-12 bg-white/80 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all text-center"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, margin: '-100px' }}
+  transition={{ duration: 0.8 }}
+>
+  <p className="text-lg text-text-primary leading-relaxed mb-4 hover:text-black font-medium">
+    Got something specific in mind? Talk to our team for a one-on-one consultation to discover how
+    <span className="font-semibold text-primary-600"> Terranova </span>
+    can turn your land into a living masterpiece.
+  </p>
+  <p className="text-lg text-text-primary leading-relaxed">
+    Write to{' '}
+    <b><a
+      href="mailto:contact@terranovadeveloper.in"
+      className="text-primary-600 hover:underline"
+    >
+      contact@terranovadeveloper.in
+    </a></b>
+    , and our team will get back to you as soon as we can.
+  </p>
+</motion.div>
+
+
       </div>
     </section>
   );
