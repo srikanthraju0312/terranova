@@ -9,6 +9,10 @@ export type Property = {
   description?: string;
   details?: Array<{ label: string; value: string }>;
   amenities?: string[]; // list of property amenities
+  location?: {
+    lat: number;
+    lng: number;
+  };
 };
 
 export const properties: Property[] = [
@@ -50,6 +54,10 @@ export const properties: Property[] = [
       "Intercom Facility",
       "Elevator Access"
     ],
+    location: {
+      lat: 17.3850,
+      lng: 78.4867
+    },
   },
   
   {
@@ -88,6 +96,10 @@ export const properties: Property[] = [
       "Bar Lounge",
       "Private Herb and Fruit Garden"
     ],
+    location: {
+      lat: 17.3616,
+      lng: 78.4747
+    },
   },
   {
     id: "vivara",
@@ -125,6 +137,10 @@ export const properties: Property[] = [
       "Full-service Housekeeping",
       "Automation-ready infrastructure"
     ],
+    location: {
+      lat: 17.3702,
+      lng: 78.4820
+    },
   },
   {
     id: "ayana",
@@ -164,6 +180,10 @@ export const properties: Property[] = [
       "Automation-ready",
       "Modern infrastructure"
     ],
+    location: {
+      lat: 17.3950,
+      lng: 78.4650
+    },
   },
   {
     id: "bavisvara",
@@ -201,6 +221,10 @@ export const properties: Property[] = [
       "Lawns",
       "Pet-friendly with nature trails"
     ],
+    location: {
+      lat: 17.3780,
+      lng: 78.4550
+    },
   },
   {
     id: "anaeva",
@@ -235,6 +259,10 @@ export const properties: Property[] = [
       "Tree-lined avenues and rainwater harvesting system",
       "Easy highway access from Hyderabad"
     ],
+    location: {
+      lat: 17.3500,
+      lng: 78.4400
+    },
   },
   {
     id: "arthaven",
@@ -273,6 +301,10 @@ export const properties: Property[] = [
       "Bonfire lounge",
       "Event deck"
     ],
+    location: {
+      lat: 11.4102,
+      lng: 76.6950
+    },
   },
 ];
 

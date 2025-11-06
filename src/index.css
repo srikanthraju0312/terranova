@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Italiana:wght@400&family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana:wght@400&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -154,7 +154,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: "Raleway", "Raleway Placeholder", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
   }
   
@@ -211,9 +211,9 @@
     }
   }
 
-  /* Subtitles/Paragraphs - Raleway font for body content */
+  /* Subtitles/Paragraphs - Poppins font for body content */
   .text-subtitle {
-    font-family: "Raleway", "Raleway Placeholder", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     color: hsl(var(--color-white));
 
@@ -238,9 +238,9 @@
     }
   }
 
-  /* Additional Subsections - Raleway font for secondary content */
+  /* Additional Subsections - Poppins font for secondary content */
   .text-subsection {
-    font-family: "Raleway", "Raleway Placeholder", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     color: #FFFFFF;
 
@@ -377,7 +377,7 @@
   }
 
   .text-body-lg {
-    font-family: "Raleway", "Raleway Placeholder", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     color: hsl(var(--text-secondary));
 
@@ -401,7 +401,7 @@
   }
 
   .text-body {
-    font-family: "Raleway", "Raleway Placeholder", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     line-height: 1.6;
     color: hsl(var(--text-secondary));
@@ -426,7 +426,7 @@
   }
 
   .text-caption {
-    font-family: "Raleway", "Raleway Placeholder", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     line-height: 1.4;
     color: hsl(var(--text-muted));
@@ -448,7 +448,7 @@
   }
 
   .text-overline {
-    font-family: "Raleway", "Raleway Placeholder", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.05em;

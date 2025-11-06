@@ -102,7 +102,7 @@ export default {
 			},
 			fontFamily: {
 				serif: ['Italiana', 'Italiana Placeholder', 'serif'],
-				sans: ['Raleway', 'Raleway Placeholder', 'sans-serif'],
+				sans: ['Poppins', 'sans-serif'],
 				display: ['Italiana', 'Italiana Placeholder', 'serif']
 			},
 			spacing: {

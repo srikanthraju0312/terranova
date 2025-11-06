@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PropertyCarousel from '@/components/PropertyCarousel';
 import PropertyImageGallery from '@/components/PropertyImageGallery';
+import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import { getPropertyById } from '@/data/properties';
 import { motion } from 'framer-motion';
 import { Bed, Bath } from 'lucide-react';
@@ -187,25 +188,36 @@ const PropertyDetail = () => {
               </h2>
 
               <div className="grid lg:grid-cols-3 gap-8">
-                {/* Map Placeholder */}
+                {/* Google Map */}
                 <div className="lg:col-span-2">
-                  <div className="bg-surface-elevated rounded-lg overflow-hidden shadow-sm h-96">
-                    <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                          </svg>
+                  <div className="h-96">
+                    {property.location ? (
+                      <GoogleMapEmbed
+                        lat={property.location.lat}
+                        lng={property.location.lng}
+                        address={property.address}
+                        title={property.title}
+                      />
+                    ) : (
+                      <div className="bg-surface-elevated rounded-lg overflow-hidden shadow-sm h-full">
+                        <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                          <div className="text-center">
+                            <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                              <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                            </div>
+                            <p className="text-text-secondary text-sm">
+                              Location information coming soon
+                            </p>
+                            <p className="text-text-primary font-medium mt-2">
+                              {property.address}
+                            </p>
+                          </div>
                         </div>
-                        <p className="text-text-secondary text-sm">
-                          Interactive map will be displayed here
-                        </p>
-                        <p className="text-text-primary font-medium mt-2">
-                          {property.address}
-                        </p>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
 
