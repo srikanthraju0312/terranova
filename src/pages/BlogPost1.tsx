@@ -73,7 +73,7 @@ const BlogPost1 = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900">
+    <div className="min-h-screen bg-neutral-50 text-neutral-900">
       <Header />
 
       <main className="max-w-[1200px] mx-auto px-4 md:px-8 flex relative pt-32 md:pt-36">

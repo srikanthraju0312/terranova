@@ -61,7 +61,7 @@ const Blog = () => {
               <p className="text-overline text-text-inverse/80 mb-4 tracking-widest">
                 Latest Insights & Market Trends
               </p>
-              <h1 className="heading-display text-text-inverse mb-6">
+              <h1 className="heading-section text-text-inverse mb-6">
                 Real Estate Tips & Expert Advice
               </h1>
               <p className="text-subtitle text-text-inverse/90 max-w-2xl mx-auto">
