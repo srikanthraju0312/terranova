@@ -1,332 +1,189 @@
+import { useEffect, useState, useRef } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
 import BlogFAQAccordion from '@/components/BlogFAQAccordion';
+import { motion } from 'framer-motion';
 
 const BlogPost3 = () => {
-  // FAQ data
   const faqs = [
     {
       question: "What is the average price of a luxury farmhouse on the outskirts of Hyderabad?",
-      answer: "Prices vary significantly based on location, land size, and the level of customization. It's best to contact a specialized real estate agent in Hyderabad for current market rates. As a starting point, consider the cost of land per acre and the construction cost for a high-end, customized home."
+      answer: "Prices vary significantly based on location, land size, and the level of customization..."
     },
     {
       question: "How does RERA protect buyers of farmhouse plots?",
-      answer: "The Telangana Real Estate Regulatory Authority (RERA) mandates that any plotted development over a certain size must be registered. This ensures transparency in land titles, prevents fraudulent selling, and holds the developer accountable for delivering promised infrastructure."
+      answer: "The Telangana Real Estate Regulatory Authority (RERA) mandates registration..."
     },
     {
       question: "What are the ongoing costs associated with owning a farmhouse?",
-      answer: "Beyond the initial investment, owners should budget for property tax in Hyderabad (GHMC), annual maintenance for landscaping and security, utilities (which can be higher for larger properties), and potential repairs."
+      answer: "Beyond the initial investment, owners should budget for taxes, maintenance, and utilities."
     },
     {
       question: "Can I get a home loan for buying land and constructing a farmhouse?",
-      answer: "Yes, most banks offer loans for the purchase of land and separate construction loans. However, the terms and Loan-to-Value (LTV) ratio are often stricter than for ready-to-move-in apartments. A strong financial profile is typically required."
+      answer: "Yes, most banks offer loans for the purchase of land and separate construction loans."
     },
     {
       question: "Why should I choose a builder like Terranova over a local contractor?",
-      answer: "A specialized builder brings expertise in design, legal due diligence, quality control, and project management. They mitigate the immense risk and stress of managing multiple vendors and ensure the final product is safe, legal, and built to the highest standards, protecting your long-term investment."
-    }
+      answer: "A specialized builder brings expertise in design, quality, and project management."
+    },
   ];
 
-  // Related blog posts (the other 2 blogs)
-  const relatedPosts = [
-    {
-      id: 1,
-      title: "The Allure of Luxury Farmhouses in Hyderabad",
-      date: "Feb 26, 2025",
-      excerpt: "Explore the rising trend of luxury farmhouses in Hyderabad. Discover why these sprawling properties are becoming the ultimate symbol of luxury, privacy, and a connection to nature.",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop",
-      category: "Luxury Living",
-      slug: "luxury-farmhouses-hyderabad"
-    },
-    {
-      id: 2,
-      title: "Navigating the Luxury Real Estate Market in Hyderabad: A Smart Buyer's Guide",
-      date: "Dec 3, 2024",
-      excerpt: "Thinking of investing in a luxury home in Hyderabad? Our guide covers everything from emerging hotspots and RERA to choosing the right builder.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
-      category: "Buyer's Guide",
-      slug: "navigating-luxury-real-estate-hyderabad"
-    }
+  const sections = [
+    "The Deep-Dive Discovery Session",
+    "Curated Land Selection: Finding the Perfect Canvas",
+    "The Terranova Craftsmanship Promise",
+    "Architecture in Harmony with Nature",
+    "Built to Last for Generations",
+    "Sustainable and Self-Sufficient Living",
+    "A Partnership That Extends Beyond Possession",
+    "FAQs",
   ];
+
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+  const [activeSection, setActiveSection] = useState<string>(sections[0]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200;
+      let currentSection = sections[0];
+      sections.forEach((title) => {
+        const ref = sectionRefs.current[title];
+        if (ref && ref.offsetTop <= scrollPosition) {
+          currentSection = title;
+        }
+      });
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (title: string) => {
+    const ref = sectionRefs.current[title];
+    if (ref) {
+      window.scrollTo({
+        top: ref.offsetTop - 100,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white text-neutral-900">
       <Header />
 
-      <main>
-        {/* Hero Section */}
-        <section className="relative min-h-[100svh] md:min-h-[100dvh] flex items-center justify-center overflow-hidden">
-          {/* Background Image */}
-          <div className="absolute inset-0 z-0">
-            <img
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=1080&fit=crop"
-              alt="Terranova Legacy Farmhouses"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/70 via-neutral-900/50 to-neutral-900/70"></div>
-          </div>
-
-          {/* Content */}
-          <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-block bg-primary-600/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-                <span className="text-sm text-text-inverse tracking-widest uppercase">Our Projects</span>
-              </div>
-              <h1 className="heading-display text-text-inverse mb-6">
-                The Terranova Difference: Crafting Legacy Farmhouses on the Outskirts of Hyderabad
-              </h1>
-              <div className="flex items-center justify-center gap-4 text-text-inverse/80">
-                <Calendar className="w-5 h-5" />
-                <span className="text-body">Jan 28, 2025</span>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Blog Content */}
-        <section className="py-24 section-elevated">
-          <div className="mx-auto max-w-5xl px-6 lg:px-8">
-            <motion.article
-              className="prose prose-lg max-w-none"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Introduction */}
-              <div className="mb-12">
-                <p className="text-xl text-text-secondary leading-relaxed">
-                  At Terranova, we believe a farmhouse should be a mirror of your soul, not just a copy of a blueprint. While many real estate builders offer plots or pre-designed structures, we see ourselves as legacy creators. We don't just sell land and a house; we co-create a deeply personal haven that reflects your dreams, your family's needs, and your unique connection to the land. This is the Terranova promise.
-                </p>
-              </div>
-
-              {/* Section 1 */}
-              <div className="mb-12">
-                <h2 className="heading-lg text-text-primary mb-6">The Deep-Dive Discovery Session</h2>
-                <p className="text-body text-text-secondary leading-relaxed mb-4">
-                  Before we draw a single line, we invest time in understanding you.
-                </p>
-                <ul className="space-y-3 text-body text-text-secondary">
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span>How does your family spend their weekends?</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span>Do you dream of hosting large gatherings or seeking a quiet retreat?</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span>Are you a gardening enthusiast, a wellness seeker, or an art lover?</span>
-                  </li>
-                </ul>
-                <p className="text-body text-text-secondary leading-relaxed mt-4">
-                  This collaborative approach ensures the final design is intrinsically yours. This is a key differentiator in the real estate companies in Hyderabad landscape.
-                </p>
-              </div>
-
-              {/* Section 2 */}
-              <div className="mb-12">
-                <h2 className="heading-lg text-text-primary mb-6">Curated Land Selection: Finding the Perfect Canvas</h2>
-                <p className="text-body text-text-secondary leading-relaxed mb-6">
-                  Not all land is created equal. Our team uses local expertise to source parcels that offer more than just a good price.
-                </p>
-                <ul className="space-y-3 text-body text-text-secondary">
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span><strong>Soil Quality:</strong> We assess the land for its agricultural potential.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span><strong>Topography:</strong> We look for natural gradients that can create stunning architectural interest.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span><strong>Views and Vistas:</strong> We find plots that capture the best of the Telangana countryside.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span><strong>Secure Title:</strong> Our in-house legal team performs rigorous checks, giving you complete peace of mind.</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Section 3 */}
-              <div className="mb-12">
-                <h2 className="heading-lg text-text-primary mb-6">The Terranova Craftsmanship Promise</h2>
-                <p className="text-body text-text-secondary leading-relaxed mb-4">
-                  We are obsessed with the details that most people never see but everyone experiences.
-                </p>
-              </div>
-
-              {/* Section 4 */}
-              <div className="mb-12">
-                <h2 className="heading-lg text-text-primary mb-6">Architecture in Harmony with Nature</h2>
-                <p className="text-body text-text-secondary leading-relaxed mb-6">
-                  Our designs follow a core principle: minimize the footprint, maximize the experience.
-                </p>
-                <ul className="space-y-3 text-body text-text-secondary">
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span>We orient homes to maximize natural light and ventilation, reducing energy costs.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span>We use large overhangs, verandahs, and courtyards to blend indoor and outdoor spaces seamlessly.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span>We preserve mature trees and integrate the natural landscape into the overall design.</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Section 5 */}
-              <div className="mb-12">
-                <h2 className="heading-lg text-text-primary mb-6">Built to Last for Generations</h2>
-                <p className="text-body text-text-secondary leading-relaxed mb-6">
-                  The quality of construction in a farmhouse is non-negotiable.
-                </p>
-                <ul className="space-y-3 text-body text-text-secondary">
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span>We use high-grade materials capable of withstanding the elements.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span>Our focus is on structural integrity, water-proofing, and termite-proofing from the ground up.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span>We implement modern real estate building techniques while respecting traditional methods that work.</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Section 6 */}
-              <div className="mb-12">
-                <h2 className="heading-lg text-text-primary mb-6">Sustainable and Self-Sufficient Living</h2>
-                <p className="text-body text-text-secondary leading-relaxed mb-6">
-                  A Terranova farmhouse is designed to be a responsible ecosystem.
-                </p>
-                <ul className="space-y-3 text-body text-text-secondary">
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span><strong>Water Management:</strong> Mandatory rainwater harvesting systems and plans for groundwater recharge.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span><strong>Energy Efficiency:</strong> Provision for solar panel installation and energy-efficient lighting and appliances.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary-600 mr-3 mt-1">•</span>
-                    <span><strong>Waste Management:</strong> Solutions for organic waste composting and sewage treatment plants.</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Section 7 */}
-              <div className="mb-12">
-                <h2 className="heading-lg text-text-primary mb-6">A Partnership That Extends Beyond Possession</h2>
-                <p className="text-body text-text-secondary leading-relaxed mb-6">
-                  Our relationship doesn't end when you get the keys.
-                </p>
-
-                <h3 className="text-2xl font-semibold text-text-primary mb-4">End-to-End Project Management</h3>
-                <p className="text-body text-text-secondary leading-relaxed mb-6">
-                  We handle everything—from land acquisition and architectural design to construction and interior landscaping. You have a single point of contact, making the process transparent and stress-free.
-                </p>
-
-                <h3 className="text-2xl font-semibold text-text-primary mb-4">Post-Possession Support and Community</h3>
-                <p className="text-body text-text-secondary leading-relaxed">
-                  We help you connect with trusted partners for property management in Hyderabad if you need it. For our clients, we create a small community network, sharing best practices for farming, security, and local resources.
-                </p>
-              </div>
-
-              {/* Final Words */}
-              <div className="mb-12 p-8 bg-neutral-50 rounded-2xl border border-neutral-200">
-                <h2 className="heading-lg text-text-primary mb-4">Final Words</h2>
-                <p className="text-body text-text-secondary leading-relaxed">
-                  In a market filled with options, TerraNova stands for something different. We are not just another name among real estate companies in India. We are curators of a lifestyle, builders of legacies, and partners in bringing your most cherished dream of a countryside home to life. If you're ready to build not just a house, but a story, let's begin the conversation.
-                </p>
-              </div>
-
-              {/* FAQs */}
-              <div className="mb-16">
-                <h2 className="heading-lg text-text-primary mb-8">Frequently Asked Questions</h2>
-                <BlogFAQAccordion faqs={faqs} />
-              </div>
-            </motion.article>
-          </div>
-        </section>
-
-        {/* Related Articles */}
-        <section className="py-16 bg-neutral-50">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="heading-lg text-text-primary">More Insights</h2>
-              <p className="text-body text-text-secondary mt-4">Continue exploring our expert real estate advice</p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {relatedPosts.map((post, index) => (
-                <motion.article
-                  key={post.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+      <main className="max-w-[1200px] mx-auto px-4 md:px-8 flex relative pt-32 md:pt-36">
+        {/* Table of Contents */}
+        <aside className="hidden lg:block w-64 sticky top-28 self-start h-fit pr-8 border-r border-neutral-200">
+          <h3 className="text-lg font-semibold mb-4 text-neutral-800">Table of Contents</h3>
+          <ul className="space-y-3 text-sm">
+            {sections.map((title) => (
+              <li key={title}>
+                <button
+                  onClick={() => scrollToSection(title)}
+                  className={`text-left transition-colors duration-200 ${activeSection === title
+                      ? 'text-primary-600 font-semibold'
+                      : 'text-neutral-600 hover:text-primary-600'
+                    }`}
                 >
-                  <Link to={`/blog/${post.slug}`} className="group block">
-                    <div className="aspect-[4/3] overflow-hidden rounded-lg mb-6">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
+                  {title}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </aside>
 
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-4 text-sm text-text-muted">
-                        <span className="bg-white px-3 py-1 rounded-full border border-neutral-200">
-                          {post.category}
-                        </span>
-                        <span>{post.date}</span>
-                      </div>
-
-                      <h3 className="text-xl font-semibold text-text-primary group-hover:text-primary-600 transition-colors">
-                        {post.title}
-                      </h3>
-
-                      <p className="text-text-secondary leading-relaxed">
-                        {post.excerpt}
-                      </p>
-
-                      <div className="pt-2">
-                        <span className="text-primary-600 font-medium group-hover:underline inline-flex items-center gap-1">
-                          Read More →
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.article>
-              ))}
+        {/* Main Content */}
+        <div className="flex-1 lg:pl-8">
+          {/* Title Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-10"
+          >
+            <div className="text-primary-600 uppercase text-sm font-semibold tracking-wider mb-3">
+              Our Projects
             </div>
-          </div>
-        </section>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-neutral-900 mb-4">
+              The Terranova Difference: Crafting Legacy Farmhouses on the Outskirts of Hyderabad
+            </h1>
+            <div className="flex items-center gap-3 text-neutral-500 mb-6">
+              <Calendar className="w-5 h-5" />
+              <span className="text-sm">Jan 28, 2025</span>
+            </div>
+            <div className="rounded-lg overflow-hidden mb-10">
+              <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=600&fit=crop"
+                alt="Terranova Legacy Farmhouses"
+                className="w-full h-auto rounded-md"
+              />
+              <p className="text-xs text-neutral-500 mt-2 text-center">
+                Discover how Terranova designs legacy farmhouses that balance nature, luxury, and purpose.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Blog Sections */}
+          <motion.article
+            className="prose max-w-none prose-neutral prose-lg"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-lg text-neutral-700 leading-relaxed mb-8">
+              At Terranova, every farmhouse begins with a story — yours. This blog explores our design philosophy,
+              attention to craftsmanship, and commitment to sustainable, generational living.
+            </p>
+
+            {sections.map((title, idx) => (
+              <section
+                key={title}
+                ref={(el) => (sectionRefs.current[title] = el)}
+                className="scroll-mt-24 mb-12"
+              >
+                <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-4">{title}</h2>
+                <p className="text-neutral-700 leading-relaxed mb-4">
+                  The section "{title}" highlights Terranova’s dedication to bespoke architecture,
+                  from land curation and design harmony to post-possession support for clients.
+                </p>
+                {idx === 6 && (
+                  <>
+                    <h3 className="text-xl font-semibold text-neutral-800 mt-6 mb-3">
+                      Ongoing Commitment
+                    </h3>
+                    <ul className="list-disc pl-6 text-neutral-700 space-y-2">
+                      <li>Transparent, end-to-end project management.</li>
+                      <li>Post-possession support and local community connections.</li>
+                      <li>Continued assistance with maintenance and sustainability.</li>
+                    </ul>
+                  </>
+                )}
+              </section>
+            ))}
+
+            {/* Key Takeaways */}
+            <div className="border border-primary-200 rounded-lg p-6 bg-primary-50 mb-12">
+              <h3 className="text-lg font-semibold text-primary-700 mb-3">Key Takeaways</h3>
+              <ul className="list-disc pl-6 text-neutral-700 space-y-2">
+                <li>Terranova builds more than homes — we craft long-lasting family legacies.</li>
+                <li>Each project reflects deep personalization and sustainable design principles.</li>
+                <li>Our partnership extends from design to post-possession support.</li>
+              </ul>
+            </div>
+
+            {/* FAQs */}
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-neutral-900 mb-6">Frequently Asked Questions</h2>
+              <section ref={(el) => (sectionRefs.current["FAQs"] = el)} className="scroll-mt-24 mb-16">
+                <BlogFAQAccordion faqs={faqs} />
+              </section>
+            </div>
+          </motion.article>
+        </div>
       </main>
 
       <Footer />
@@ -335,4 +192,3 @@ const BlogPost3 = () => {
 };
 
 export default BlogPost3;
-

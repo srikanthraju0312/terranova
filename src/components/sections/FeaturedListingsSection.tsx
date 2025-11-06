@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import { properties } from '@/data/properties';
 
 const FeaturedListingsSection = () => {
-  // Display only the first 3 properties on the home page
-  const featuredProperties = properties.slice(0, 3);
+  // Display only specific properties: Nysha, Bavisvara, and Ayana
+  const featuredProperties = properties.filter(property =>
+    ["nyhsha", "bavisvara", "ayana"].includes(property.id.toLowerCase())
+  );
 
   return (
     <section id="properties" className="py-24 section-elevated">
@@ -33,46 +35,47 @@ const FeaturedListingsSection = () => {
             >
               <Link to={`/properties/${property.id}`} className="block">
                 <div className="bg-surface-elevated rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-                {/* Property Image */}
-                <div className="relative overflow-hidden aspect-[3/2]">
-                  <img
-                    src={property.images[0]}
-                    alt={property.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Status and Dot on Right Side */}
-                  <div className="absolute top-4 right-4 flex items-center gap-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="inline-flex items-center px-3 py-1 text-xs font-medium bg-white text-text-primary rounded-full">
-                      For Sale
-                    </span>
-                  </div>
-                </div>
-
-                {/* Property Details - No price display */}
-                <div className="p-6">
-                  <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-text-primary mb-2 group-hover:text-primary-600 transition-colors">
-                      {property.title}
-                    </h3>
-                    {/* <p className="text-text-secondary text-sm leading-relaxed">
-                      {property.description}
-                    </p> */}
-                  </div>
-
-                  {/* Property Features */}
-                  <div className="flex items-center gap-4 text-text-muted text-sm">
-                    <div className="flex items-center gap-1">
-                      <Bed className="h-4 w-4" />
-                      <span>{property.bedrooms} Bedrooms</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Bath className="h-4 w-4" />
-                      <span>{property.bathrooms} Bathrooms</span>
+                  
+                  {/* Property Image */}
+                  <div className="relative overflow-hidden aspect-[3/2]">
+                    <img
+                      src={property.images[0]}
+                      alt={property.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {/* Status and Dot on Right Side */}
+                    <div className="absolute top-4 right-4 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <span className="inline-flex items-center px-3 py-1 text-xs font-medium bg-white text-text-primary rounded-full">
+                        For Sale
+                      </span>
                     </div>
                   </div>
+
+                  {/* Property Details - No price display */}
+                  <div className="p-6">
+                    <div className="mb-4">
+                      <h3 className="text-xl font-semibold text-text-primary mb-2 group-hover:text-primary-600 transition-colors">
+                        {property.title}
+                      </h3>
+                      {/* <p className="text-text-secondary text-sm leading-relaxed">
+                        {property.description}
+                      </p> */}
+                    </div>
+
+                    {/* Property Features */}
+                    <div className="flex items-center gap-4 text-text-muted text-sm">
+                      <div className="flex items-center gap-1">
+                        <Bed className="h-4 w-4" />
+                        <span>{property.bedrooms} Bedrooms</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Bath className="h-4 w-4" />
+                        <span>{property.bathrooms} Bathrooms</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
               </Link>
             </motion.div>
           ))}
