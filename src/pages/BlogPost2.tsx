@@ -3,9 +3,21 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Calendar } from 'lucide-react';
 import BlogFAQAccordion from '@/components/BlogFAQAccordion';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const BlogPost2 = () => {
+  const [showShadow, setShowShadow] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show shadow when at top, hide when scrolled down more than 50px
+      setShowShadow(window.scrollY <= 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const faqs = [
     {
       question: "What is the average price of a luxury farmhouse on the outskirts of Hyderabad?",
@@ -70,9 +82,22 @@ const BlogPost2 = () => {
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900">
+      {/* Dark background section for header visibility - only shows when scrolling */}
+      <AnimatePresence>
+        {showShadow && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 right-0 h-32 bg-gradient-to-b from-neutral-800 to-transparent z-0"
+          />
+        )}
+      </AnimatePresence>
+
       <Header />
 
-      <main className="max-w-[1200px] mx-auto px-4 md:px-8 flex relative pt-32 md:pt-36">
+      <main className="max-w-[1200px] mx-auto px-4 md:px-8 flex relative pt-32 md:pt-36 z-10">
         {/* Table of Contents */}
         <aside className="hidden lg:block w-64 sticky top-28 self-start h-fit pr-8 border-r border-neutral-200">
           <h3 className="text-lg font-semibold mb-4 text-neutral-800">Table of Contents</h3>

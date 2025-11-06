@@ -1,9 +1,26 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Blog = () => {
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [showNewsletterSuccess, setShowNewsletterSuccess] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState('');
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmittedEmail(newsletterEmail);
+    setShowNewsletterSuccess(true);
+    setNewsletterEmail('');
+
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setShowNewsletterSuccess(false);
+    }, 5000);
+  };
+
   const blogPosts = [
     {
       id: 1,
@@ -130,14 +147,33 @@ const Blog = () => {
             <p className="text-lg text-text-secondary mb-8">
               Get exclusive real estate insights, market trends, and property updates straight to your inbox.
             </p>
-            
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
+
+            {/* Success Message */}
+            <AnimatePresence>
+              {showNewsletterSuccess && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg max-w-md mx-auto"
+                >
+                  <p className="text-green-800 font-medium">
+                    Thank you! You have successfully subscribed with {submittedEmail}
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
                 type="email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder="Enter your email"
+                required
                 className="flex-1 px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               />
-              <button 
+              <button
                 type="submit"
                 className="px-6 py-3 bg-text-primary text-white rounded-lg hover:bg-opacity-90 transition-colors font-medium"
               >

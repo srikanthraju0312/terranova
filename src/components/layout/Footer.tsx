@@ -1,7 +1,25 @@
 import { Link } from 'react-router-dom';
 import logoWhite from '@/assets/logo/terranova-logo-white.svg';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Footer = () => {
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [showNewsletterSuccess, setShowNewsletterSuccess] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState('');
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmittedEmail(newsletterEmail);
+    setShowNewsletterSuccess(true);
+    setNewsletterEmail('');
+
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setShowNewsletterSuccess(false);
+    }, 5000);
+  };
+
   return (
     <footer className="bg-neutral-900 text-white">
       <div className="mx-auto max-w-7xl section-padding">
@@ -17,19 +35,40 @@ const Footer = () => {
               </p>
             </div>
 
-            <form className="flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-neutral-800 border border-neutral-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-neutral-400"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-white text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors font-medium"
-              >
-                Submit
-              </button>
-            </form>
+            <div>
+              {/* Success Message */}
+              <AnimatePresence>
+                {showNewsletterSuccess && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg"
+                  >
+                    <p className="text-green-800 font-medium">
+                      Thank you! You have successfully subscribed with {submittedEmail}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="flex-1 px-4 py-3 bg-neutral-800 border border-neutral-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-neutral-400"
+                />
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-white text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors font-medium"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
         </div>
 

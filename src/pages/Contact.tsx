@@ -1,9 +1,49 @@
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Mail, Phone, MapPin } from 'lucide-react'
+import { useState } from 'react'
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [submittedName, setSubmittedName] = useState('');
+  const [submittedEmail, setSubmittedEmail] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmittedName(`${formData.firstName} ${formData.lastName}`);
+    setSubmittedEmail(formData.email);
+    setShowSuccess(true);
+
+    // Reset form
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      message: ''
+    });
+
+    // Hide success message after 7 seconds
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 7000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
   return (
     <div className="min-h-screen">
       <Header  />
@@ -37,6 +77,27 @@ const Contact = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Success Message - Positioned between hero and contact form */}
+        <AnimatePresence>
+          {showSuccess && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="mx-auto max-w-7xl px-6 lg:px-8 -mt-12 mb-8 relative z-20"
+            >
+              <div className="max-w-2xl mx-auto p-6 bg-green-50 border border-green-200 rounded-lg shadow-lg">
+                <h3 className="text-green-800 font-semibold text-lg mb-2">
+                  Thank you, {submittedName}!
+                </h3>
+                <p className="text-green-700">
+                  Our team will contact you shortly at {submittedEmail}
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Contact Content */}
         <section className="py-24">
@@ -93,7 +154,7 @@ const Contact = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-text-primary mb-2">
@@ -102,6 +163,9 @@ const Contact = () => {
                       <input
                         type="text"
                         id="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
                       />
                     </div>
@@ -112,6 +176,9 @@ const Contact = () => {
                       <input
                         type="text"
                         id="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
                       />
                     </div>
@@ -124,6 +191,9 @@ const Contact = () => {
                     <input
                       type="email"
                       id="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
                     />
                   </div>
@@ -135,6 +205,9 @@ const Contact = () => {
                     <input
                       type="tel"
                       id="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
                     />
                   </div>
@@ -146,6 +219,9 @@ const Contact = () => {
                     <textarea
                       id="message"
                       rows={6}
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
                     ></textarea>
                   </div>
